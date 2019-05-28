@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+</head>
+
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      /** 配置项 **/
+      name: 'docsify 文档', //侧边栏的文档标题
+      repo: '',
+      loadSidebar: true, //侧边栏，对应 _navbar.md
+      subMaxLevel: 10,  //侧边栏的列表
+      loadNavbar: true, //顶部栏，对应 _sidebar.md
+      auto2Top: true, //切换页面后到页面顶部
+      homepage: 'README.md', //设置首页
+      themeColor: '#a2c748', //设置主题颜色
+      formatUpdated: '{MM}/{DD} {HH}:{mm}', //每次更新文档保留时间，在文档中添加 { docsify-updated } 即可
+      formatUpdated: function (time) {
+        return new Date(time).toLocaleString();
+      }, //时间显示规则
+
+      /** 插件 **/
+      search: {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: 'auto', // or [path]
+        placeholder: '搜索',
+        noData: 'No Results !',
+        // 搜索标题的最大程级, 1 - 6
+        depth: 2
+      }, //搜索框配置
+
+      pagination: {
+        previousText: '上一节',
+        nextText: '下一节',
+        crossChapter: true
+      }, //分页导航
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+  <!-- 搜索插件 -->
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <!-- 图片缩放 -->
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!-- 分页导航 -->
+</body>
+
+</html>
